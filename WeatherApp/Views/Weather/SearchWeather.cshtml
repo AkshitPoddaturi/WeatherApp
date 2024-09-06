@@ -1,0 +1,22 @@
+﻿@{
+    ViewBag.Title = "Search Weather";
+}
+
+<h2>Search Weather</h2>
+
+@using (Html.BeginForm("GetWeather", "Weather", FormMethod.Post))
+{
+    <div class="form-group">
+        <label for="city">Enter City Name</label>
+        <input type="text" name="city" class="form-control" required />
+    </div>
+    <button type="submit" class="btn btn-primary">Get Weather</button>
+}
+
+@if (ViewBag.Message != null)
+{
+    <div class="alert alert-warning">
+        @ViewBag.Message
+    </div>
+}
+

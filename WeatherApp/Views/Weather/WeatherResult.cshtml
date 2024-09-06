@@ -1,0 +1,16 @@
+﻿@model WeatherApp.Models.WeatherResponse
+
+<h2>Weather Details for @Model.name</h2>
+
+<div class="weather-info">
+    <p>Temperature: @Model.main.temp °C</p>
+    <p>Feels Like: @Model.main.feels_like °C</p>
+    <p>Weather: @Model.weather[0].description</p>
+    <p>Humidity: @Model.main.humidity%</p>
+    <p>Wind Speed: @Model.wind.speed m/s</p>
+</div>
+
+<div>
+    @Html.ActionLink("Search Another City", "SearchWeather", "Weather", null, new { @class = "btn btn-primary" })
+</div>
+
